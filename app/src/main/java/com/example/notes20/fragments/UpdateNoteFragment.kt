@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.notes20.model.Note
+import com.example.notes20.MainActivity
 import com.example.notes20.database.NoteDatabaseHelper
 import com.example.notes20.databinding.FragmentUpdateNoteBinding
+import com.example.notes20.model.Note
 
 class UpdateNoteFragment : Fragment() {
 
@@ -45,8 +46,12 @@ class UpdateNoteFragment : Fragment() {
             val newContent = binding.updateContentEditText.text.toString()
             val updatedNote = Note(noteId, newTitle, newContent)
             db.updateNote(updatedNote)
-            requireActivity().supportFragmentManager.popBackStack()
             Toast.makeText(requireContext(), "Note updated successfully", Toast.LENGTH_SHORT).show()
+
+            // Refresh the notes list in MainActivity after update
+            (requireActivity() as MainActivity).refreshNotesList()
+
+            requireActivity().supportFragmentManager.popBackStack()
         }
     }
 

@@ -9,10 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.notes20.fragments.UpdateNoteFragment
 import com.example.notes20.model.Note
 import com.example.notes20.database.NoteDatabaseHelper
 import com.example.notes20.R
+import com.example.notes20.fragments.UpdateNoteFragment
 
 class NotesAdapter(private var notes: List<Note>, private val context: Context) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 

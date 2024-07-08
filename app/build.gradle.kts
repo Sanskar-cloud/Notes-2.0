@@ -15,7 +15,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "apiKey","")
+//        buildConfigField("String", "apiKey","")
     }
 
     buildTypes {
@@ -37,6 +37,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+//        buildConfig = true
     }
 }
 
